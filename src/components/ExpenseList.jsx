@@ -7,7 +7,7 @@ export default function ExpenseList({ expenses }) {
     <ul>
       {expenses.map((expense, index) => (
         <li key={index}>
-          {expense.amount}円 - {expense.category} ({expense.date.toLocaleDateString()})
+          {expense.amount}円 - {expense.category} {new Date(expense.date).toLocaleDateString()}
         </li>
       ))}
     </ul>
