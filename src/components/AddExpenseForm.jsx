@@ -6,7 +6,7 @@ export default function AddExpenseForm({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd({ amount, category, date: new Date().toISOString });
+    onAdd({ amount, category, date: new Date().toISOString() });
     setAmount("");
     setCategory("");
   };
