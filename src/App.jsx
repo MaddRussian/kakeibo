@@ -16,11 +16,15 @@ function App() {
     setExpenses([...expenses, expense]);
   };
 
+  const handleDeleteExpense = (indexToDelete) => {
+    setExpenses((prev) => prev.filter((_, i) => i !== indexToDelete));
+  };
+
   return (
     <div className="App">
       <h1>Welcome to Kakeibo</h1>
       <AddExpenseForm onAdd={addExpense} />
-      <ExpenseList expenses={expenses} />
+      <ExpenseList expenses={expenses} onDelete={handleDeleteExpense} />
     </div>
   );
 }
