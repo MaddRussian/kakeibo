@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AddExpenseForm from "./components/AddExpenseForm";
 import ExpenseList from "./components/ExpenseList";
+import Summary from "./components/Summary";
 
 function App() {
   const [expenses, setExpenses] = useState(() => {
@@ -25,6 +26,7 @@ function App() {
       <h1>Welcome to Kakeibo</h1>
       <AddExpenseForm onAdd={addExpense} />
       <ExpenseList expenses={expenses} onDelete={handleDeleteExpense} />
+      <Summary expenses={expenses} />
     </div>
   );
 }
