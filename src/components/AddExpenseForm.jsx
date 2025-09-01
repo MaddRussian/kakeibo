@@ -21,11 +21,12 @@ export default function AddExpenseForm({ onAdd }) {
       />
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
         <option value="Food">Food</option>
-        <option value="Food">Transport</option>
-        <option value="Food">Entertainment</option>
-        <option value="Food">Shopping</option>
-        <option value="Food">Utilities</option>
-        <option value="Food">Other</option>
+        <option value="Coffee">Coffee</option>
+        <option value="Transport">Transport</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Other">Other</option>
       </select>
 
       <button type="submit">Add</button>
