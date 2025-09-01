@@ -1,14 +1,15 @@
 import { useState } from "react";
+import { categories } from "../categories";
 
 export default function AddExpenseForm({ onAdd }) {
   const [amount, setAmount] = useState("");
-  const [category, setCategory] = useState("Food");
+  const [category, setCategory] = useState(categories[0]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onAdd({ amount, category, date: new Date().toISOString() });
     setAmount("");
-    setCategory("Food");
+    setCategory(categories[0]);
   };
 
   return (
@@ -20,13 +21,11 @@ export default function AddExpenseForm({ onAdd }) {
         onChange={(e) => setAmount(e.target.value)}
       />
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="Food">Food</option>
-        <option value="Coffee">Coffee</option>
-        <option value="Transport">Transport</option>
-        <option value="Entertainment">Entertainment</option>
-        <option value="Shopping">Shopping</option>
-        <option value="Utilities">Utilities</option>
-        <option value="Other">Other</option>
+        {categories.map((categoryName) => (
+          <option key={categoryName} value={categoryName}>
+            {categoryName}
+          </option>
+        ))}
       </select>
 
       <button type="submit">Add</button>

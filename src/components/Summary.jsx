@@ -1,12 +1,16 @@
+import React from "react";
+import { categories } from "../categories";
+
 export default function Summary({ expenses }) {
   const totals = {};
 
-  for (const expense of expenses) {
-    if (!totals[expense.category]) {
-      totals[expense.category] = 0;
-    }
-    totals[expense.category] += expense.amount;
-  }
+  categories.forEach((categoryName) => {
+    totals[categoryName] = 0;
+  });
+
+  expenses.forEach((expense) => {
+    totals[expense.category] += Number(expense.amount);
+  })
 
   return (
     <div>
