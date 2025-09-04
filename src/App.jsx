@@ -3,6 +3,8 @@ import AddExpenseForm from "./components/AddExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import Summary from "./components/Summary";
 import BudgetForm from "./components/BudgetForm";
+import "./App.css";
+
 
 function App() {
   const [expenses, setExpenses] = useState(() => {
@@ -33,16 +35,16 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>Welcome to Kakeibo</h1>
 
+      <h3>Your Personal Budget Buddy</h3>
       <BudgetForm
         budget={budget}
         setBudget={setBudget}
         bills={bills}
         setBills={setBills}
       />
-      <h3>Your Personal Budget Buddy</h3>
       <p>
         Budget: {budget}円 | Bills: {bills}円 | Available: {available}円
       </p>
