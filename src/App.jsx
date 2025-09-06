@@ -3,6 +3,7 @@ import AddExpenseForm from "./components/AddExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import Summary from "./components/Summary";
 import BudgetForm from "./components/BudgetForm";
+import ExpenseChart from "./components/ExpenseChart";
 import "./App.css";
 
 
@@ -63,6 +64,8 @@ function App() {
         <div className="expense-list section">
           <ExpenseList expenses={expenses} onDelete={handleDeleteExpense} />
         </div>
+
+        <ExpenseChart expenses={expenses} />
 
         <div className="summary section">
           <Summary expenses={expenses} />
