@@ -37,12 +37,11 @@ function App() {
   return (
     <div className="app-container">
       <h1>Welcome to Kakeibo</h1>
+      <h2>Your Personal Budget Buddy</h2>
 
       <div className="grid-container">
-        <div className="budget-section">
 
-
-      <h3>Your Personal Budget Buddy</h3>
+        <div className="budget section">
       <BudgetForm
         budget={budget}
         setBudget={setBudget}
@@ -51,21 +50,21 @@ function App() {
         />
         </div>
 
-        <div className="overview-section">
+        <div className="overview section">
       <p>
         Budget: {budget}円 | Bills: {bills}円 | Available: {available}円
       </p>
         </div>
 
-        <div className="add-expense-section">
+        <div className="add-expense section">
           <AddExpenseForm onAdd={addExpense} />
         </div>
 
-        <div className="expense-list-section">
+        <div className="expense-list section">
           <ExpenseList expenses={expenses} onDelete={handleDeleteExpense} />
         </div>
 
-        <div className="summary-section">
+        <div className="summary section">
           <Summary expenses={expenses} />
         </div>
 
