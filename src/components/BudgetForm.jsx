@@ -6,7 +6,7 @@ export default function BudgetForm({ setBudget, setBills }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setInputBudget(Number(inputBudget));
+    setBudget(Number(inputBudget));
     setBills(Number(inputBills));
     setInputBudget("");
     setInputBills("");
