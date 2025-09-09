@@ -20,7 +20,7 @@ export default function BudgetForm({ setBudget, setBills }) {
         type="number"
         placeholder="Monthly budget"
         value={inputBudget}
-        onChange={(e) => setInputBudget(e.target.value)}
+        onChange={(e) => setInputBudget(Number(e.target.value))}
         className="border p-2 mr-2"
         />
 
@@ -28,7 +28,7 @@ export default function BudgetForm({ setBudget, setBills }) {
         type="number"
         placeholder="Monthly bills"
         value={inputBills}
-        onChange={(e) => setInputBills(e.target.value)}
+        onChange={(e) => setInputBills(Number(e.target.value))}
         className="border p-2 mr-2"
         />
 

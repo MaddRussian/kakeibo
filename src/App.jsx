@@ -21,7 +21,7 @@ function App() {
     totalExpenses += e.amount;
   });
 
-  const available = budget - bills - totalExpenses
+  const available = budget - bills - totalExpenses;
 
   useEffect(() => {
     localStorage.setItem("expenses", JSON.stringify(expenses));
