@@ -10,7 +10,10 @@ function ExpenseChart({ expenses }) {
     categoryTotals[expense.category] += expense.amount;
   });
 
-  const data = Object.entries(categoryTotals).map(([category, total]) => ({
+  const data =
+    expenses.length === 0
+    ? [{ name: "No Expenses Yet", value: 100 }]
+    : Object.entries(categoryTotals).map(([category, total]) => ({
     name: category,
     value: Number(total),
   }));
@@ -28,18 +31,19 @@ function ExpenseChart({ expenses }) {
           cx="50%"
           cy="50%"
           outerRadius={100}
-          label
+          label={expenses.length > 0}
         >
           {data.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
-              fill={COLORS[index % COLORS.length]}
+              fill={expenses.length === 0 ? "#ddd" : COLORS[index % COLORS.length]}
             />
           ))}
           </Pie>
           <Tooltip> </Tooltip>
           <Legend></Legend>
         </PieChart>
+
     </div>
   );
 }
