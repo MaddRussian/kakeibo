@@ -1,17 +1,25 @@
 import { useState } from "react";
-import "./App.css";
+import "../App.css";
 
 export default function BudgetForm({ setBudget, setBills }) {
   const [inputBudget, setInputBudget] = useState("");
   const [inputBills, setInputBills] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setBudget(Number(inputBudget));
-    setBills(Number(inputBills));
-    setInputBudget("");
-    setInputBills("");
-  };
+
+    if (!inputBudget || !inputBills) {
+      setError("Please enter both your budget and monthly bills.");
+      return;
+    }
+    else {
+      setError("");
+      setBudget(Number(inputBudget));
+      setBills(Number(inputBills));
+      setInputBudget("");
+      setInputBills("");
+  }};
 
   return (
     <form onSubmit={handleSubmit} className="p-4 border rounded">
@@ -36,6 +44,8 @@ export default function BudgetForm({ setBudget, setBills }) {
       <button type="submit" className="bg-blue-500 text-white px-3 py-1 rounded">
         Save
       </button>
+
+      {error && <p className="text-red-500 mt-2">{error}</p>}
 
     </form>
   );

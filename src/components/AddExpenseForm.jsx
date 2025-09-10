@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { categories } from "../categories";
-import "./App.css";
+import "../App.css";
 
 export default function AddExpenseForm({ onAdd }) {
   const [amount, setAmount] = useState("");
